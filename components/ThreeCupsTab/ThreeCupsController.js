@@ -21,7 +21,7 @@ export function useThreeCupsController() {
       
       // CONVERTIR a string - Livy espera "--guess 1" como string, no número
       const response = await runService({
-        serviceId: "5c464ccb-789d-44a5-993e-deefe0d8df9b",
+        serviceId: "",
         params: { guess: cupIndex.toString() }, // ← CAMBIO IMPORTANTE: .toString()
         withAttestation: true,
         postToDataAvailability: false
