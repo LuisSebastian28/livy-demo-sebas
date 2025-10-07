@@ -4,12 +4,14 @@ import SequenceTab from '../components/SequenceTab';
 import TimeAwareTab from '../components/TimeAwareTab';
 import CoinTossTab from '../components/CoinTossTab';
 import PriceFeedTab from '../components/PriceFeedTab';
+import ThreeCupsTab from '../components/ThreeCupsTab';
 
 const tabs = [
   { id: 'sequence', name: 'Sequence', component: SequenceTab },
   { id: 'time-aware', name: 'Time-Aware', component: TimeAwareTab },
   { id: 'coin-toss', name: 'Coin Toss', component: CoinTossTab },
   { id: 'price-feed', name: 'Price Feed', component: PriceFeedTab },
+  { id: 'three-cups', name: 'Three Cups', component: ThreeCupsTab },
 ];
 
 export default function Home() {

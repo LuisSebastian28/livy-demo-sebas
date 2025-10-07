@@ -203,6 +203,24 @@ export default function ServiceResponse({
  * Render service-specific extracted data
  */
 function renderExtractedData(extractedData) {
+
+  // Three cups specific display  ← NUEVO
+  if (extractedData.hasOwnProperty('won') && extractedData.hasOwnProperty('ballPosition')) {
+    return (
+      <div className={`${styles.gameResult} ${extractedData.won ? styles.gameWin : styles.gameLose}`}>
+        <h3 className={styles.gameTitle}>
+          {extractedData.won ? '🎉 You Won!' : '💔 You Lost!'}
+        </h3>
+        {extractedData.userGuess !== undefined && extractedData.ballPosition !== undefined && (
+          <p className={styles.gameDetails}>
+            You chose <strong>cup {extractedData.userGuess + 1}</strong>, 
+            ball was under <strong>cup {extractedData.ballPosition + 1}</strong>
+          </p>
+        )}
+      </div>
+    );
+  }
+
   // Price feed specific display
   if (extractedData.priceData) {
     const { priceData } = extractedData;
